@@ -4,8 +4,8 @@ pipeline {
    stages {
 	stage('install packages') {
 		steps {
-	  		sh 'apt install python3-pytest'
-			sh 'apt install python3-pymssql'
+	  		sh 'apt-get install python3-pytest'
+			sh 'apt-get install python3-pymssql'
 		}
 	}
     stage('run tests') {
