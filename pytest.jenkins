@@ -4,7 +4,8 @@ pipeline {
    stages {
 	stage('install packages') {
 		steps {
-	  		sh 'pip install pytest'
+	  		sh '. env/bin/activate'
+			sh 'pip install pytest'
 			sh 'pip install pymssql'
 		}
 	}
