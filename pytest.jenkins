@@ -1,0 +1,18 @@
+pipeline {
+   agent any
+
+   stages {
+	stage('install packages') {
+		steps {
+	  		sh 'apt install python3-pytest'
+			sh 'apt install python3-pymssql'
+		}
+	}
+    stage('run tests') {
+        steps{      
+            sh 'python3 pytest_cases.py'
+        }
+        }
+
+  }
+}
