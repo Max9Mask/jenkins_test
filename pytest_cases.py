@@ -1,6 +1,5 @@
 import pymssql
 import pytest
-import allure
 
 
 # Connection to DB
