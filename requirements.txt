@@ -1,2 +1,3 @@
-unittest2
-xmlrunner
+pytest
+pymssql
+allure-pytest
