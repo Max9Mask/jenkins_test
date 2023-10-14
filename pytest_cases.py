@@ -5,7 +5,7 @@ import pytest
 # Connection to DB
 @pytest.fixture(scope="module")
 def db_connection():
-    server = 'EPPLKATW004E:8080'
+    server = ' 172.26.32.1:1433'
     user = 'test_login'
     password = '123456abcdefABC'
     db_name = 'AdventureWorks2012'
