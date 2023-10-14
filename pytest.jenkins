@@ -23,8 +23,8 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your pytest tests
-                sh '''pytest --alluredir=./var/jenkins_home/workspace/allure-report pytest_cases.py
-		allure serve ./var/jenkins_home/workspace/allure-report
+                sh '''pytest --alluredir=allure-report pytest_cases.py
+		allure serve allure-report
 		'''
             }
         }
@@ -32,7 +32,7 @@ pipeline {
         stage('Generate Allure Report') {
             steps {
                 // Generate the Allure report
-                sh 'allure generate ./var/jenkins_home/workspace/allure-report'
+                sh 'echo allure generate'
             }
         }
     }
