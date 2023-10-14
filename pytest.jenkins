@@ -6,9 +6,7 @@ pipeline {
 		steps {
 	  		sh 'python3 -m venv env'
 			sh '. env/bin/activate'
-			sh 'pip install pytest'
-			sh 'pip install pymssql'
-			sh 'pip install allure-pytest'
+			sh 'python3 -m pip install -r requirements.txt'
 		}
 	}
     stage('run tests') {
