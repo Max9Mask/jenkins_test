@@ -14,7 +14,7 @@ pipeline {
     stage('run tests') {
         steps{      
             sh '''
-	    pytest --alluredir=allure-report pytest_cases.py
+	    pytest --alluredir=allure-results pytest_cases.py
 	    allure serve allure-report
 		'''
         }
