@@ -15,8 +15,6 @@ def db_connection():
 
 
 # Test Cases
-@allure.feature("My Feature")
-@allure.story("My Story")
 def test_table_exists(db_connection):
     with db_connection.cursor() as cursor:
         cursor.execute("SELECT OBJECT_ID(N'Person.Address')")
