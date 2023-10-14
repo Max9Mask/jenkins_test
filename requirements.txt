@@ -1,4 +1,4 @@
 pytest
 pymssql
 allure-pytest
-pytest-allure-adaptor
+pytest-cov
