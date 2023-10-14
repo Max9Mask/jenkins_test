@@ -4,9 +4,11 @@ pipeline {
    stages {
 	stage('install packages') {
 		steps {
-	  		sh '. env/bin/activate'
+	  		sh 'python3 -m venv env'
+			sh '. env/bin/activate'
 			sh 'pip install pytest'
 			sh 'pip install pymssql'
+			sh 'pip install allure-pytest'
 		}
 	}
     stage('run tests') {
