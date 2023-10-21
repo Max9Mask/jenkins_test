@@ -23,7 +23,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your pytest tests
-                sh 'pytest --junitxml=results.xml pytest_cases.py'
+                sh 'pytest -s pytest_cases.py'
 		
             }
         }
