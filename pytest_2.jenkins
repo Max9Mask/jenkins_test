@@ -23,7 +23,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your pytest tests
-                sh 'python3 -m pytest pytest_cases.py'
+                sh 'python3 -m venv env pytest pytest_cases.py'
 		
             }
         }
