@@ -23,7 +23,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your pytest tests
-                sh 'python3 -m venv env pytest pytest_cases.py'
+                sh 'pytest --junitxml=results.xml pytest_cases.py'
 		
             }
         }
