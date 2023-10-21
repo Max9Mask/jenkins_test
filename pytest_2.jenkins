@@ -23,7 +23,10 @@ pipeline {
         stage('Run Tests') {
             steps {
                 // Run your pytest tests
-                sh 'pytest --junitxml=results.xml pytest_cases.py'
+                sh '''	
+			. env/bin/activate
+			pytest --junitxml=results.xml pytest_cases.py
+		'''
 		
             }
         }
