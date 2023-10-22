@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Download Repository Files') {
+            steps {
+                // Use the git step to clone the repository to a local folder
+                dir('git_repo')
+                    git(url: 'https://github.com/Max9Mask/jenkins_test.git', branch: 'main')
+                }
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                // Check out your source code from your version control system (e.g., Git)
+                checkout scm
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                // Install the required dependencies, e.g., Python, pip, and pytest
+                sh '''
+                    python3 -m venv env
+                    . env/bin/activate
+                    python3 -m pip install -r requirements.txt
+                '''
+            }
+        }
+        
+        stage('Run Tests') {
+            steps {
+                // Run your pytest tests
+                sh '''	
+                    . env/bin/activate
+                    pytest --junitxml=results.xml pytest_cases.py
+                '''
+            }
+        }
+    }
+}
