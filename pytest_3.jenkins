@@ -31,11 +31,24 @@ pipeline {
         
         stage('Run Tests') {
             steps {
-                // Run pytest tests
+                // Run your pytest tests
                 sh '''	
                     . env/bin/activate
                     pytest --junitxml=results.xml pytest_cases.py
                 '''
+            }
+        }
+        
+        stage('Push to Release Branch') {
+            steps {
+                dir('git_repo') {
+                    sh '''
+                        git checkout -b release
+                        git add .
+                        git commit -m "Release candidate"
+                        git push origin release
+                    '''
+                }
             }
         }
     }
