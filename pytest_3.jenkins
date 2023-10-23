@@ -44,7 +44,6 @@ pipeline {
                 dir('git_repo') {
                     sh '''
                         git checkout release
-                        git checkout main -- feature
                         git add .
                         git commit -m "Release candidate"
                         git push origin release
