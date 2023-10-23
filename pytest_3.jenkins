@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // clone the repository to a local folder
                 dir('git_repo') {
-                    git(url: 'https://github.com/Max9Mask/jenkins_test.git', branch: 'main')
+                    git(url: 'git@github.com:Max9Mask/jenkins_test.git', branch: 'main')
                 }
             }
         }
