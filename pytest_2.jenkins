@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Check out your source code from your version control system (e.g., Git)
+                // Check out source code
                 checkout scm
             }
         }
         
         stage('Install Dependencies') {
             steps {
-                // Install the required dependencies, e.g., Python, pip, and pytest
+                // Install the required dependencies
                 sh '''
 			python3 -m venv env
 			. env/bin/activate
@@ -22,7 +22,7 @@ pipeline {
         
         stage('Run Tests') {
             steps {
-                // Run your pytest tests
+                // Run pytest tests
                 sh '''	
 			. env/bin/activate
 			pytest --junitxml=results.xml pytest_cases.py
