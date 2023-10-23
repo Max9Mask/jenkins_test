@@ -43,7 +43,7 @@ pipeline {
             steps {
                 dir('git_repo') {
                     sh '''
-                        git checkout -b release
+                        git checkout release
                         git add .
                         git commit -m "Release candidate"
                         git push origin release
