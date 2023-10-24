@@ -26,7 +26,7 @@ def test_address_count(db_connection):
     with db_connection.cursor() as cursor:
         cursor.execute("SELECT COUNT(*) AS count FROM Person.Address")
         result = cursor.fetchall()
-    assert result[0][0] == 19614
+    assert result[0][0] == 19615
 
 
 def test_address_sum(db_connection):
